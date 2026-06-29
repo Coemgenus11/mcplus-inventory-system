@@ -22,11 +22,13 @@ Partial Class frmTransferData
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtTTOrderID = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.submitReturn = New System.Windows.Forms.Button()
         Me.cancelReturn = New System.Windows.Forms.Button()
         Me.panelReturn = New System.Windows.Forms.Panel()
@@ -67,8 +69,8 @@ Partial Class frmTransferData
         Me.tt_return_qty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tt_total_amount_return = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tt_remove = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.txtTTOrderID = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtTTGrandTotal = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.panelReturn.SuspendLayout()
         CType(Me.btnTransferShowItems, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,6 +81,8 @@ Partial Class frmTransferData
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.txtTTGrandTotal)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtTTOrderID)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.submitReturn)
@@ -109,6 +113,23 @@ Partial Class frmTransferData
         Me.GroupBox1.Size = New System.Drawing.Size(1182, 559)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
+        '
+        'txtTTOrderID
+        '
+        Me.txtTTOrderID.Location = New System.Drawing.Point(623, 71)
+        Me.txtTTOrderID.Name = "txtTTOrderID"
+        Me.txtTTOrderID.ReadOnly = True
+        Me.txtTTOrderID.Size = New System.Drawing.Size(255, 20)
+        Me.txtTTOrderID.TabIndex = 101
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(548, 78)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(66, 13)
+        Me.Label6.TabIndex = 100
+        Me.Label6.Text = "ORDER ID :"
         '
         'submitReturn
         '
@@ -324,7 +345,7 @@ Partial Class frmTransferData
         '
         'txtTTDRNo
         '
-        Me.txtTTDRNo.Location = New System.Drawing.Point(101, 75)
+        Me.txtTTDRNo.Location = New System.Drawing.Point(67, 71)
         Me.txtTTDRNo.Name = "txtTTDRNo"
         Me.txtTTDRNo.ReadOnly = True
         Me.txtTTDRNo.Size = New System.Drawing.Size(156, 20)
@@ -332,7 +353,7 @@ Partial Class frmTransferData
         '
         'txtTTCreateDate
         '
-        Me.txtTTCreateDate.Location = New System.Drawing.Point(380, 71)
+        Me.txtTTCreateDate.Location = New System.Drawing.Point(327, 71)
         Me.txtTTCreateDate.Name = "txtTTCreateDate"
         Me.txtTTCreateDate.ReadOnly = True
         Me.txtTTCreateDate.Size = New System.Drawing.Size(167, 20)
@@ -358,7 +379,7 @@ Partial Class frmTransferData
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(298, 78)
+        Me.Label3.Location = New System.Drawing.Point(245, 74)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(76, 13)
         Me.Label3.TabIndex = 72
@@ -376,7 +397,7 @@ Partial Class frmTransferData
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(63, 78)
+        Me.Label1.Location = New System.Drawing.Point(29, 74)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(29, 13)
         Me.Label1.TabIndex = 70
@@ -409,14 +430,14 @@ Partial Class frmTransferData
         Me.dgTransferL.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.dgTransferL.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.dgTransferL.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgTransferL.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgTransferL.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgTransferL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgTransferL.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.tt_companycode, Me.tt_dr, Me.tt_rowcount, Me.tt_sku, Me.tt_item, Me.tt_color, Me.tt_variant, Me.tt_loc, Me.tt_qty, Me.tt_approved_qty, Me.tt_received_qty, Me.tt_total_amount, Me.tt_return_qty, Me.tt_total_amount_return, Me.tt_remove})
         Me.dgTransferL.Location = New System.Drawing.Point(0, 163)
@@ -424,8 +445,8 @@ Partial Class frmTransferData
         Me.dgTransferL.Name = "dgTransferL"
         Me.dgTransferL.RowHeadersVisible = False
         Me.dgTransferL.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgTransferL.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgTransferL.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.dgTransferL.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgTransferL.Size = New System.Drawing.Size(1182, 396)
         Me.dgTransferL.TabIndex = 41
@@ -460,8 +481,8 @@ Partial Class frmTransferData
         '
         'tt_item
         '
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.tt_item.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.tt_item.DefaultCellStyle = DataGridViewCellStyle6
         Me.tt_item.HeaderText = "Item"
         Me.tt_item.Name = "tt_item"
         Me.tt_item.ReadOnly = True
@@ -515,8 +536,8 @@ Partial Class frmTransferData
         '
         'tt_return_qty
         '
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        Me.tt_return_qty.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        Me.tt_return_qty.DefaultCellStyle = DataGridViewCellStyle7
         Me.tt_return_qty.FillWeight = 50.0!
         Me.tt_return_qty.HeaderText = "Return Qty"
         Me.tt_return_qty.Name = "tt_return_qty"
@@ -542,22 +563,24 @@ Partial Class frmTransferData
         Me.tt_remove.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.tt_remove.Visible = False
         '
-        'txtTTOrderID
+        'txtTTGrandTotal
         '
-        Me.txtTTOrderID.Location = New System.Drawing.Point(579, 108)
-        Me.txtTTOrderID.Name = "txtTTOrderID"
-        Me.txtTTOrderID.ReadOnly = True
-        Me.txtTTOrderID.Size = New System.Drawing.Size(290, 20)
-        Me.txtTTOrderID.TabIndex = 101
+        Me.txtTTGrandTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTTGrandTotal.Location = New System.Drawing.Point(694, 97)
+        Me.txtTTGrandTotal.Name = "txtTTGrandTotal"
+        Me.txtTTGrandTotal.ReadOnly = True
+        Me.txtTTGrandTotal.Size = New System.Drawing.Size(184, 21)
+        Me.txtTTGrandTotal.TabIndex = 103
+        Me.txtTTGrandTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Label6
+        'Label7
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(504, 115)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(66, 13)
-        Me.Label6.TabIndex = 100
-        Me.Label6.Text = "ORDER ID :"
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(548, 101)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(140, 13)
+        Me.Label7.TabIndex = 102
+        Me.Label7.Text = "GRAND TOTAL AMOUNT :"
         '
         'frmTransferData
         '
@@ -627,4 +650,6 @@ Partial Class frmTransferData
     Friend WithEvents tt_remove As DataGridViewImageColumn
     Friend WithEvents txtTTOrderID As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents txtTTGrandTotal As TextBox
+    Friend WithEvents Label7 As Label
 End Class

@@ -113,6 +113,11 @@ Public Class frmStockOut
             MsgBox("Please fill in all required fields.", MsgBoxStyle.Exclamation, "Validation Error")
             Exit Sub
         End If
+        If String.IsNullOrWhiteSpace(txtTTGrandTotal.Text) Then
+
+            MsgBox("Please fill in grand total. Input 0 if not applicable.", MsgBoxStyle.Exclamation, "Validation Error")
+            Exit Sub
+        End If
 
         If dgTransfer.Rows.Count = 0 Then
             MsgBox("No items found in the transfer list.", MsgBoxStyle.Exclamation, "No Items")
@@ -214,7 +219,7 @@ Public Class frmStockOut
                                                              lblTTStoreCodeDest.Text,
                                                              drNumber,
                                                              "0",
-                                                             txtTTRemarks.Text, orderID,
+                                                             txtTTRemarks.Text, orderID, txtTTGrandTotal.Text,
                                                              My.Settings.CurrentUserID)
 
                 If Not headerSuccess Then
@@ -245,6 +250,8 @@ Public Class frmStockOut
         cbTTStoreDest.Text = ""
         lblTTStoreCodeDest.Text = ""
         txtTTRemarks.Text = ""
+        txtTTOrderID.Text = ""
+        txtTTGrandTotal.Text = ""
         txtTTDR.Text = GenerateDR(get_user_comp(My.Settings.CurrentUserID), My.Settings.Store)
         dgTransfer.Rows.Clear()
     End Sub
@@ -300,5 +307,69 @@ Public Class frmStockOut
 
     Private Sub txtAllStatusFind_TextChanged(sender As Object, e As EventArgs) Handles txtAllStatusFind.TextChanged
         TransferClass.itemListSearch(txtAllStatusFind.Text, lblTTStoreCodeDestAll.Text)
+    End Sub
+
+    Private Sub txtTTGrandTotal_TextChanged(sender As Object, e As EventArgs) Handles txtTTGrandTotal.TextChanged
+        Static ignoreTextChanged As Boolean = False
+        If ignoreTextChanged Then Return
+
+        Dim textBox As TextBox = DirectCast(sender, TextBox)
+        Dim originalText As String = textBox.Text
+        Dim cursorPos As Integer = textBox.SelectionStart
+
+        ' Step 1: Remove all invalid characters (only digits and a single decimal point)
+        Dim filtered As New System.Text.StringBuilder()
+        Dim decimalFound As Boolean = False
+        For Each ch As Char In originalText
+            If Char.IsDigit(ch) Then
+                filtered.Append(ch)
+            ElseIf ch = "."c AndAlso Not decimalFound Then
+                filtered.Append(ch)
+                decimalFound = True
+            End If
+        Next
+
+        Dim newText As String = filtered.ToString()
+
+        ' Step 2: Enforce decimal places and total length
+        Dim parts() As String = newText.Split("."c)
+        Dim intPart As String = parts(0)
+        Dim fracPart As String = If(parts.Length > 1, parts(1), "")
+
+        ' Limit integer part to 8 digits (10 total - 2 decimal)
+        If intPart.Length > 8 Then
+            intPart = intPart.Substring(0, 8)
+        End If
+
+        ' Limit fractional part to 2 digits
+        If fracPart.Length > 2 Then
+            fracPart = fracPart.Substring(0, 2)
+        End If
+
+        ' Rebuild the formatted string
+        Dim formatted As String = intPart
+        If fracPart.Length > 0 OrElse decimalFound Then
+            formatted &= "." & fracPart
+        End If
+
+        ' If the text is empty or just a decimal point, keep it as is (or add leading zero?)
+        If formatted = "" Then
+            formatted = ""
+        ElseIf formatted = "." Then
+            formatted = "0."   ' optional: auto-add zero before decimal
+        End If
+
+        ' Update the text only if it changed
+        If formatted <> originalText Then
+            ignoreTextChanged = True
+            textBox.Text = formatted
+            ' Adjust cursor position:
+            ' If we added a '0' at the beginning, cursor shifts right.
+            Dim newCursor As Integer = cursorPos + (formatted.Length - originalText.Length)
+            If newCursor < 0 Then newCursor = 0
+            If newCursor > formatted.Length Then newCursor = formatted.Length
+            textBox.SelectionStart = newCursor
+            ignoreTextChanged = False
+        End If
     End Sub
 End Class

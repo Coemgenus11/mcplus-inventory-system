@@ -769,11 +769,11 @@ Module StockQueries
 
     Public Function create_transfer_h(conn As MySqlConnection, trans As MySqlTransaction,
                                   inputCom As String, storeOrig As String, storeDest As String,
-                                  dr As Integer, status As String, remarks As String, order_id As String,
+                                  dr As Integer, status As String, remarks As String, order_id As String, grand_total_amount As String,
                                   create_by As String) As Boolean
         Try
-            Dim sqlQuery As String = "INSERT INTO transfer_h (company_code, store_code_origin, store_code_dest, dr, status, remarks, order_id, create_date, create_time, create_by, replication_stat) 
-                                  VALUES (@comp, @storeOrig, @storeDest, @dr, @status, @remarks, @order_id, @cdate, @ctime, @cby, @rep)"
+            Dim sqlQuery As String = "INSERT INTO transfer_h (company_code, store_code_origin, store_code_dest, dr, status, remarks, order_id, grand_total_amount, create_date, create_time, create_by, replication_stat) 
+                                  VALUES (@comp, @storeOrig, @storeDest, @dr, @status, @remarks, @order_id, @grand_total_amount, @cdate, @ctime, @cby, @rep)"
 
             Using sqlComm As New MySqlCommand(sqlQuery, conn, trans)
                 sqlComm.Parameters.AddWithValue("@comp", inputCom)
@@ -783,6 +783,7 @@ Module StockQueries
                 sqlComm.Parameters.AddWithValue("@status", status)
                 sqlComm.Parameters.AddWithValue("@remarks", remarks)
                 sqlComm.Parameters.AddWithValue("@order_id", order_id)
+                sqlComm.Parameters.AddWithValue("@grand_total_amount", grand_total_amount)
                 sqlComm.Parameters.AddWithValue("@cdate", Date.Now.ToString("yyyy-MM-dd"))
                 sqlComm.Parameters.AddWithValue("@ctime", Date.Now.ToString("HH:mm:ss"))
                 sqlComm.Parameters.AddWithValue("@cby", create_by)
@@ -1095,6 +1096,7 @@ Module StockQueries
                                             transfer_h.dr, 
                                             transfer_h.remarks,
                                             transfer_h.order_id,
+                                            transfer_h.grand_total_amount,
                                             transfer_h.create_by,
                                             transfer_h.create_date,
                                             transfer_h.approved_by,
@@ -1156,6 +1158,8 @@ Module StockQueries
                                             transfer_h.store_code_dest,
                                             transfer_h.dr,
                                             transfer_h.remarks,
+                                            transfer_h.order_id,
+                                            transfer_h.grand_total_amount,
                                             transfer_h.create_date,
                                             transfer_h.approved_timestamp,
                                             transfer_h.received_timestamp,

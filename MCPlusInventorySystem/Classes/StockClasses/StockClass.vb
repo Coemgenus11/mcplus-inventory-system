@@ -432,6 +432,7 @@
         Dim status As Integer = CInt(row("status"))
         Dim remarks As String = row("remarks").ToString()
         Dim order_id As String = row("order_id").ToString()
+        Dim grand_total As Decimal = CDec(row("grand_total_amount"))
         Dim receivedTimestamp As String = row("received_timestamp").ToString()
         Dim inTransitLabel As String = If(String.IsNullOrEmpty(receivedTimestamp), "In Transit", "Partial Received")
 
@@ -465,6 +466,7 @@
                 .lblTTStoreDest.Text = storeDestDesc
                 .txtTTRemarks.Text = remarks
                 .txtTTOrderID.Text = order_id
+                .txtTTGrandTotal.Text = grand_total
                 .txtTTCreateDate.Text = dateCreated
                 .lblTTStoreCodeDest.Text = storeCodeDest
 

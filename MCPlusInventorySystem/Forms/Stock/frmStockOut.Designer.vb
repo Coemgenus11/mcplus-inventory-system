@@ -22,17 +22,19 @@ Partial Class frmStockOut
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tcStockOut = New System.Windows.Forms.TabControl()
         Me.tabTransferItem = New System.Windows.Forms.TabPage()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.txtTTGrandTotal = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtTTOrderID = New System.Windows.Forms.TextBox()
         Me.btnTTTransfer = New System.Windows.Forms.Button()
@@ -57,7 +59,21 @@ Partial Class frmStockOut
         Me.transfer_remove = New System.Windows.Forms.DataGridViewImageColumn()
         Me.tabTransferAll = New System.Windows.Forms.TabPage()
         Me.dgTransferAll = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.th_storedestAll = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.th_drAll = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.th_orderIDAll = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.th_viewAll = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblTTStoreCodeDestAll = New System.Windows.Forms.Label()
+        Me.cbAllStatusStore = New System.Windows.Forms.ComboBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtAllStatusFind = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.tabTransfer10 = New System.Windows.Forms.TabPage()
         Me.dgTransfer10 = New System.Windows.Forms.DataGridView()
@@ -148,20 +164,6 @@ Partial Class frmStockOut
         Me.th_view9 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.cbAllStatusStore = New System.Windows.Forms.ComboBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.txtAllStatusFind = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.th_storedestAll = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.th_drAll = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.th_orderIDAll = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.th_viewAll = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.lblTTStoreCodeDestAll = New System.Windows.Forms.Label()
         Me.tcStockOut.SuspendLayout()
         Me.tabTransferItem.SuspendLayout()
         CType(Me.btnTTShowItems, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -210,6 +212,8 @@ Partial Class frmStockOut
         '
         'tabTransferItem
         '
+        Me.tabTransferItem.Controls.Add(Me.Label17)
+        Me.tabTransferItem.Controls.Add(Me.txtTTGrandTotal)
         Me.tabTransferItem.Controls.Add(Me.Label14)
         Me.tabTransferItem.Controls.Add(Me.txtTTOrderID)
         Me.tabTransferItem.Controls.Add(Me.btnTTTransfer)
@@ -231,10 +235,27 @@ Partial Class frmStockOut
         Me.tabTransferItem.Text = "Transfer Creation"
         Me.tabTransferItem.UseVisualStyleBackColor = True
         '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(638, 138)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(98, 13)
+        Me.Label17.TabIndex = 48
+        Me.Label17.Text = "Grand Total Sales :"
+        '
+        'txtTTGrandTotal
+        '
+        Me.txtTTGrandTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTTGrandTotal.Location = New System.Drawing.Point(742, 131)
+        Me.txtTTGrandTotal.Name = "txtTTGrandTotal"
+        Me.txtTTGrandTotal.Size = New System.Drawing.Size(184, 21)
+        Me.txtTTGrandTotal.TabIndex = 47
+        '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(49, 138)
+        Me.Label14.Location = New System.Drawing.Point(589, 103)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(53, 13)
         Me.Label14.TabIndex = 46
@@ -242,9 +263,9 @@ Partial Class frmStockOut
         '
         'txtTTOrderID
         '
-        Me.txtTTOrderID.Location = New System.Drawing.Point(123, 131)
+        Me.txtTTOrderID.Location = New System.Drawing.Point(663, 96)
         Me.txtTTOrderID.Name = "txtTTOrderID"
-        Me.txtTTOrderID.Size = New System.Drawing.Size(471, 20)
+        Me.txtTTOrderID.Size = New System.Drawing.Size(263, 20)
         Me.txtTTOrderID.TabIndex = 45
         '
         'btnTTTransfer
@@ -282,7 +303,7 @@ Partial Class frmStockOut
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(479, 96)
+        Me.Label10.Location = New System.Drawing.Point(41, 138)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 13)
         Me.Label10.TabIndex = 38
@@ -290,7 +311,7 @@ Partial Class frmStockOut
         '
         'txtTTRemarks
         '
-        Me.txtTTRemarks.Location = New System.Drawing.Point(561, 89)
+        Me.txtTTRemarks.Location = New System.Drawing.Point(123, 131)
         Me.txtTTRemarks.Name = "txtTTRemarks"
         Me.txtTTRemarks.Size = New System.Drawing.Size(383, 20)
         Me.txtTTRemarks.TabIndex = 37
@@ -439,14 +460,14 @@ Partial Class frmStockOut
         Me.dgTransferAll.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.dgTransferAll.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgTransferAll.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn43, Me.Column1, Me.DataGridViewTextBoxColumn44, Me.th_storedestAll, Me.th_drAll, Me.th_orderIDAll, Me.DataGridViewTextBoxColumn47, Me.DataGridViewTextBoxColumn48, Me.th_viewAll})
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgTransferAll.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgTransferAll.DefaultCellStyle = DataGridViewCellStyle1
         Me.dgTransferAll.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTransferAll.Location = New System.Drawing.Point(3, 103)
         Me.dgTransferAll.Margin = New System.Windows.Forms.Padding(2)
@@ -457,6 +478,71 @@ Partial Class frmStockOut
         Me.dgTransferAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgTransferAll.Size = New System.Drawing.Size(1080, 516)
         Me.dgTransferAll.TabIndex = 26
+        '
+        'DataGridViewTextBoxColumn43
+        '
+        Me.DataGridViewTextBoxColumn43.HeaderText = "Company Code"
+        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
+        Me.DataGridViewTextBoxColumn43.ReadOnly = True
+        Me.DataGridViewTextBoxColumn43.Visible = False
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Status Code"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'DataGridViewTextBoxColumn44
+        '
+        Me.DataGridViewTextBoxColumn44.HeaderText = "Store Code"
+        Me.DataGridViewTextBoxColumn44.Name = "DataGridViewTextBoxColumn44"
+        Me.DataGridViewTextBoxColumn44.ReadOnly = True
+        Me.DataGridViewTextBoxColumn44.Visible = False
+        '
+        'th_storedestAll
+        '
+        Me.th_storedestAll.HeaderText = "Store Destination"
+        Me.th_storedestAll.Name = "th_storedestAll"
+        Me.th_storedestAll.ReadOnly = True
+        '
+        'th_drAll
+        '
+        Me.th_drAll.FillWeight = 80.0!
+        Me.th_drAll.HeaderText = "DR"
+        Me.th_drAll.Name = "th_drAll"
+        Me.th_drAll.ReadOnly = True
+        '
+        'th_orderIDAll
+        '
+        Me.th_orderIDAll.HeaderText = "Order ID"
+        Me.th_orderIDAll.Name = "th_orderIDAll"
+        Me.th_orderIDAll.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn47
+        '
+        Me.DataGridViewTextBoxColumn47.FillWeight = 80.0!
+        Me.DataGridViewTextBoxColumn47.HeaderText = "Status"
+        Me.DataGridViewTextBoxColumn47.Name = "DataGridViewTextBoxColumn47"
+        Me.DataGridViewTextBoxColumn47.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn48
+        '
+        Me.DataGridViewTextBoxColumn48.FillWeight = 70.0!
+        Me.DataGridViewTextBoxColumn48.HeaderText = "Date Created"
+        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
+        Me.DataGridViewTextBoxColumn48.ReadOnly = True
+        '
+        'th_viewAll
+        '
+        Me.th_viewAll.FillWeight = 30.0!
+        Me.th_viewAll.HeaderText = ""
+        Me.th_viewAll.Image = Global.MCPlusInventorySystem.My.Resources.Resources.listview
+        Me.th_viewAll.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.th_viewAll.Name = "th_viewAll"
+        Me.th_viewAll.ReadOnly = True
+        Me.th_viewAll.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.th_viewAll.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'Panel1
         '
@@ -472,6 +558,49 @@ Partial Class frmStockOut
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1080, 100)
         Me.Panel1.TabIndex = 28
+        '
+        'lblTTStoreCodeDestAll
+        '
+        Me.lblTTStoreCodeDestAll.AutoSize = True
+        Me.lblTTStoreCodeDestAll.Location = New System.Drawing.Point(338, 52)
+        Me.lblTTStoreCodeDestAll.Name = "lblTTStoreCodeDestAll"
+        Me.lblTTStoreCodeDestAll.Size = New System.Drawing.Size(16, 13)
+        Me.lblTTStoreCodeDestAll.TabIndex = 47
+        Me.lblTTStoreCodeDestAll.Text = "---"
+        '
+        'cbAllStatusStore
+        '
+        Me.cbAllStatusStore.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbAllStatusStore.FormattingEnabled = True
+        Me.cbAllStatusStore.Location = New System.Drawing.Point(113, 47)
+        Me.cbAllStatusStore.Name = "cbAllStatusStore"
+        Me.cbAllStatusStore.Size = New System.Drawing.Size(219, 21)
+        Me.cbAllStatusStore.TabIndex = 46
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(7, 82)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(100, 13)
+        Me.Label15.TabIndex = 45
+        Me.Label15.Text = "Find DR / Order ID:"
+        '
+        'txtAllStatusFind
+        '
+        Me.txtAllStatusFind.Location = New System.Drawing.Point(113, 75)
+        Me.txtAllStatusFind.Name = "txtAllStatusFind"
+        Me.txtAllStatusFind.Size = New System.Drawing.Size(278, 20)
+        Me.txtAllStatusFind.TabIndex = 44
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(7, 52)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(71, 13)
+        Me.Label16.TabIndex = 43
+        Me.Label16.Text = "Select Store :"
         '
         'Label11
         '
@@ -508,14 +637,14 @@ Partial Class frmStockOut
         Me.dgTransfer10.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.dgTransfer10.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgTransfer10.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Column2, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.th_view10})
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgTransfer10.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgTransfer10.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgTransfer10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTransfer10.Location = New System.Drawing.Point(3, 39)
         Me.dgTransfer10.Margin = New System.Windows.Forms.Padding(2)
@@ -620,14 +749,14 @@ Partial Class frmStockOut
         Me.dgTransfer0.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.dgTransfer0.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgTransfer0.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.th_companycode, Me.Column3, Me.th_storecode_orig, Me.th_storecode_dest, Me.th_dr, Me.th_status, Me.th_datecreated, Me.th_view0})
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgTransfer0.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgTransfer0.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgTransfer0.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTransfer0.Location = New System.Drawing.Point(0, 36)
         Me.dgTransfer0.Margin = New System.Windows.Forms.Padding(2)
@@ -733,14 +862,14 @@ Partial Class frmStockOut
         Me.dgTransfer1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.dgTransfer1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgTransfer1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn31, Me.Column4, Me.DataGridViewTextBoxColumn32, Me.DataGridViewTextBoxColumn33, Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35, Me.DataGridViewTextBoxColumn36, Me.th_view1})
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgTransfer1.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgTransfer1.DefaultCellStyle = DataGridViewCellStyle4
         Me.dgTransfer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTransfer1.Location = New System.Drawing.Point(3, 39)
         Me.dgTransfer1.Margin = New System.Windows.Forms.Padding(2)
@@ -845,14 +974,14 @@ Partial Class frmStockOut
         Me.dgTransfer2.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.dgTransfer2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgTransfer2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.Column5, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.th_view2})
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgTransfer2.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgTransfer2.DefaultCellStyle = DataGridViewCellStyle5
         Me.dgTransfer2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTransfer2.Location = New System.Drawing.Point(0, 36)
         Me.dgTransfer2.Margin = New System.Windows.Forms.Padding(2)
@@ -957,14 +1086,14 @@ Partial Class frmStockOut
         Me.dgTransfer3.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.dgTransfer3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgTransfer3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.Column6, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.th_view3})
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgTransfer3.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgTransfer3.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgTransfer3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTransfer3.Location = New System.Drawing.Point(0, 36)
         Me.dgTransfer3.Margin = New System.Windows.Forms.Padding(2)
@@ -1069,14 +1198,14 @@ Partial Class frmStockOut
         Me.dgTransferPartialReceived.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.dgTransferPartialReceived.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgTransferPartialReceived.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn25, Me.Column7, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29, Me.DataGridViewTextBoxColumn30, Me.th_viewParRec})
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgTransferPartialReceived.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgTransferPartialReceived.DefaultCellStyle = DataGridViewCellStyle7
         Me.dgTransferPartialReceived.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTransferPartialReceived.Location = New System.Drawing.Point(0, 36)
         Me.dgTransferPartialReceived.Margin = New System.Windows.Forms.Padding(2)
@@ -1181,14 +1310,14 @@ Partial Class frmStockOut
         Me.dgTransfer4.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.dgTransfer4.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgTransfer4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn19, Me.Column8, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24, Me.th_view4})
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgTransfer4.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgTransfer4.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgTransfer4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTransfer4.Location = New System.Drawing.Point(0, 36)
         Me.dgTransfer4.Margin = New System.Windows.Forms.Padding(2)
@@ -1293,14 +1422,14 @@ Partial Class frmStockOut
         Me.dgTransfer9.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.dgTransfer9.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgTransfer9.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn37, Me.Column9, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewTextBoxColumn42, Me.th_view9})
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgTransfer9.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgTransfer9.DefaultCellStyle = DataGridViewCellStyle9
         Me.dgTransfer9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTransfer9.Location = New System.Drawing.Point(0, 36)
         Me.dgTransfer9.Margin = New System.Windows.Forms.Padding(2)
@@ -1396,114 +1525,6 @@ Partial Class frmStockOut
         Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.DataGridViewImageColumn1.Width = 35
-        '
-        'cbAllStatusStore
-        '
-        Me.cbAllStatusStore.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbAllStatusStore.FormattingEnabled = True
-        Me.cbAllStatusStore.Location = New System.Drawing.Point(113, 47)
-        Me.cbAllStatusStore.Name = "cbAllStatusStore"
-        Me.cbAllStatusStore.Size = New System.Drawing.Size(219, 21)
-        Me.cbAllStatusStore.TabIndex = 46
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(7, 82)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(100, 13)
-        Me.Label15.TabIndex = 45
-        Me.Label15.Text = "Find DR / Order ID:"
-        '
-        'txtAllStatusFind
-        '
-        Me.txtAllStatusFind.Location = New System.Drawing.Point(113, 75)
-        Me.txtAllStatusFind.Name = "txtAllStatusFind"
-        Me.txtAllStatusFind.Size = New System.Drawing.Size(278, 20)
-        Me.txtAllStatusFind.TabIndex = 44
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(7, 52)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(71, 13)
-        Me.Label16.TabIndex = 43
-        Me.Label16.Text = "Select Store :"
-        '
-        'DataGridViewTextBoxColumn43
-        '
-        Me.DataGridViewTextBoxColumn43.HeaderText = "Company Code"
-        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
-        Me.DataGridViewTextBoxColumn43.ReadOnly = True
-        Me.DataGridViewTextBoxColumn43.Visible = False
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Status Code"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'DataGridViewTextBoxColumn44
-        '
-        Me.DataGridViewTextBoxColumn44.HeaderText = "Store Code"
-        Me.DataGridViewTextBoxColumn44.Name = "DataGridViewTextBoxColumn44"
-        Me.DataGridViewTextBoxColumn44.ReadOnly = True
-        Me.DataGridViewTextBoxColumn44.Visible = False
-        '
-        'th_storedestAll
-        '
-        Me.th_storedestAll.HeaderText = "Store Destination"
-        Me.th_storedestAll.Name = "th_storedestAll"
-        Me.th_storedestAll.ReadOnly = True
-        '
-        'th_drAll
-        '
-        Me.th_drAll.FillWeight = 80.0!
-        Me.th_drAll.HeaderText = "DR"
-        Me.th_drAll.Name = "th_drAll"
-        Me.th_drAll.ReadOnly = True
-        '
-        'th_orderIDAll
-        '
-        Me.th_orderIDAll.HeaderText = "Order ID"
-        Me.th_orderIDAll.Name = "th_orderIDAll"
-        Me.th_orderIDAll.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn47
-        '
-        Me.DataGridViewTextBoxColumn47.FillWeight = 80.0!
-        Me.DataGridViewTextBoxColumn47.HeaderText = "Status"
-        Me.DataGridViewTextBoxColumn47.Name = "DataGridViewTextBoxColumn47"
-        Me.DataGridViewTextBoxColumn47.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn48
-        '
-        Me.DataGridViewTextBoxColumn48.FillWeight = 70.0!
-        Me.DataGridViewTextBoxColumn48.HeaderText = "Date Created"
-        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
-        Me.DataGridViewTextBoxColumn48.ReadOnly = True
-        '
-        'th_viewAll
-        '
-        Me.th_viewAll.FillWeight = 30.0!
-        Me.th_viewAll.HeaderText = ""
-        Me.th_viewAll.Image = Global.MCPlusInventorySystem.My.Resources.Resources.listview
-        Me.th_viewAll.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.th_viewAll.Name = "th_viewAll"
-        Me.th_viewAll.ReadOnly = True
-        Me.th_viewAll.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.th_viewAll.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'lblTTStoreCodeDestAll
-        '
-        Me.lblTTStoreCodeDestAll.AutoSize = True
-        Me.lblTTStoreCodeDestAll.Location = New System.Drawing.Point(338, 52)
-        Me.lblTTStoreCodeDestAll.Name = "lblTTStoreCodeDestAll"
-        Me.lblTTStoreCodeDestAll.Size = New System.Drawing.Size(16, 13)
-        Me.lblTTStoreCodeDestAll.TabIndex = 47
-        Me.lblTTStoreCodeDestAll.Text = "---"
         '
         'frmStockOut
         '
@@ -1675,4 +1696,6 @@ Partial Class frmStockOut
     Friend WithEvents DataGridViewTextBoxColumn48 As DataGridViewTextBoxColumn
     Friend WithEvents th_viewAll As DataGridViewImageColumn
     Friend WithEvents lblTTStoreCodeDestAll As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents txtTTGrandTotal As TextBox
 End Class
